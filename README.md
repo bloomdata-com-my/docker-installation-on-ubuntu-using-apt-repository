@@ -28,3 +28,23 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ```
 sudo docker run hello-world
 ```
+
+## 4. Create the docker group.
+```
+sudo groupadd docker
+```
+
+## 5. Add your user to the docker group.
+```
+sudo usermod -aG docker $USER
+```
+
+## 6. Log out and log back in so that your group membership is re-evaluated.
+```
+newgrp docker
+```
+
+## 7. Verify that you can run docker commands without sudo.
+```
+docker run hello-world
+```
